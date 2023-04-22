@@ -1,4 +1,4 @@
-![Logo](https://github.com/karthi-the-hacker/RedirectHunter/raw/main/images/logo.gif)
+![Logo](https://github.com/karthi-the-hacker/camjacking/raw/main/images/logo.gif)
 
 ## Badges
 

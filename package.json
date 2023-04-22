@@ -1,0 +1,48 @@
+{
+  "name": "camjacking",
+  "version": "0.0.1",
+  "description": "CamJacking is a tool designed for use in human penetration testing tool. It is intended to simulate potential security threats by testing the negligence of people, and is used to identify weaknesses in an organization's security infrastructure. By using CamJacking, security professionals can gain a better understanding of their organization's potential risks and take proactive measures to improve their security posture.",
+  "homepage": "https://github.com/karthi-the-hacker/CVE-2020-17453",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karthi-the-hacker/CVE-2020-17453.git"
+  },
+  "bin": {
+    "camjacking": "./app.js",
+    "CamJacking": "./app.js"
+  },
+  "readme": "README.md",
+  "author": {
+    "name": "karthikeyan V (karthithehacker)",
+    "email": "contact@karthithehacker.com",
+    "url": "https://karthithehacker.com"
+  },
+  "keywords": [
+    "webcam",
+    "social engineering",
+    "ethicalhacking",
+    "cybersecurity",
+    "cybersecurity tool",
+    "tool",
+    "security audit",
+    "karthithehacker"
+  ],
+  "files": [
+    "app.js",
+    "views",
+    "Assets",
+    "includes"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "yargs": "^17.7.1"
+  }
+}

@@ -25,7 +25,13 @@ Example for single url
   CamJacking -p 80
 ```
 
+## Output
 
+Check output in 
+
+```bash
+  ~/camjacking/
+```
 
 ## Screenshots
 

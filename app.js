@@ -5,9 +5,10 @@
  *
  * @author karthikeyan V (karthithehacker) <https://karthithehacker.com>
  */
-//lib and includes section 
+//lib and includes section
 const express = require("express");
 const app = express();
+const path = require('path');
 const fs = require("fs");
 const help = require('./includes/help');
 const bodyParser = require('body-parser');
@@ -54,6 +55,7 @@ fs.access(homeDir+"/camjacking", function (err) {
 });
 help.helpintro();
 console.log("URL=====> http://localhost:"+port)
+app.set('views', path.join(__dirname, 'views'));
 app.set('view-engine','ejs');
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));

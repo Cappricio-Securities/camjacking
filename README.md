@@ -11,7 +11,7 @@
 
 ## Installation
 
-Install RedirectHunter with npm
+Install CamJacking with npm
 
 ```bash
   npm install camjacking -g

@@ -30,7 +30,7 @@ Example for single url
 Check output in 
 
 ```bash
-  ~/camjacking/
+  ls ~/camjacking/
 ```
 
 ## Screenshots

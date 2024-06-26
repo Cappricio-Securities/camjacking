@@ -17,9 +17,18 @@ Install CamJacking with npm
   npm install camjacking -g
 ```
 
+## Config
+
+Example for Configure with Telegram Chat ID
+
+```bash
+  CamJacking -c chatid
+```
+- Open your telegram and search for [`@CappricioSecuritiesTools_bot`](https://web.telegram.org/k/#@CappricioSecuritiesTools_bot) and click start
+
 ## Usage
 
-Example for single url
+Example to start
 
 ```bash
   CamJacking -p 80
@@ -65,6 +74,7 @@ Usage: CamJacking [options]
 | `-h`     | `--help`    | Show help                                               |
 | `-V`     | `--version` | Show version number                                     |
 | `-p`     | `--port`    | Provide availabe port between 0 to 65536. |
+| `-c`     | `--chatid`    | Provide chatID to recive picture from telegram . |
 
 ## 🔗 Links
 

@@ -11,57 +11,54 @@
 
 ## Installation
 
-Install CamJacking with npm
+Install CamJacking globally via npm:
 
 ```bash
-  npm install camjacking -g
+npm install camjacking -g
 ```
 
 ## Config
 
-Example for Configure with Telegram Chat ID
+Example to configure with a Telegram Chat ID:
 
 ```bash
-  CamJacking -c chatid
+CamJacking -c chatid
 ```
-- Open your telegram and search for [`@CappricioSecuritiesTools_bot`](https://web.telegram.org/k/#@CappricioSecuritiesTools_bot) and click start
+
+- Open Telegram and search for [`@CappricioSecuritiesTools_bot`](https://web.telegram.org/k/#@CappricioSecuritiesTools_bot), then click "Start".
 
 ## Usage
 
-Example to start
+Example to start:
 
 ```bash
-  CamJacking -p 80
+CamJacking -p 80
 ```
 
 ## Output
 
-Check output in 
+Check the output in:
 
 ```bash
-  ls ~/camjacking/
+ls ~/camjacking/
 ```
 
 ## Screenshots
 
 ![App Screenshot](https://github.com/karthi-the-hacker/camjacking/raw/main/images/example.png)
 
-## Help menu
-
-#### Get all items
+## Help Menu
 
 ```bash
-
-
 👋 Hey karthithehacker
 
  .-----------------------------.
  |  Tool   : CamJacking 📸     |
  |  Author : @karthithehacker🎖️|
- |        Selfi Time           |           
- '-----------------------------'           
-                 ^      (\_/)    
-                 '----- (O.o)    
+ |        Selfie Time          |
+ '-----------------------------'
+                 ^      (\_/)
+                 '----- (O.o)
                         (> <)
 
 $ CamJacking [option]
@@ -73,8 +70,8 @@ Usage: CamJacking [options]
 | :------- | :---------- | :------------------------------------------------------ |
 | `-h`     | `--help`    | Show help                                               |
 | `-V`     | `--version` | Show version number                                     |
-| `-p`     | `--port`    | Provide availabe port between 0 to 65536. |
-| `-c`     | `--chatid`    | Provide chatID to recive picture from telegram . |
+| `-p`     | `--port`    | Provide available port between 0 to 65536.              |
+| `-c`     | `--chatid`  | Provide a chat ID to receive pictures from Telegram.    |
 
 ## 🔗 Links
 
@@ -89,3 +86,5 @@ Usage: CamJacking [options]
 ## Feedback
 
 If you have any feedback, please reach out to us at contact@karthithehacker.com
+
+---

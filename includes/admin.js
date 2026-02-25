@@ -80,20 +80,13 @@ function startAdminServer(port = 5000) {
 
   app.use(express.static(path.join(__dirname, "public")));
 
-  app.get("/", (req, res) => {
-    const token = req.headers.authorization?.split(" ")[1];
+app.get("/", (req, res) => {
+  const authHeader = req.headers.authorization;
+  const token = authHeader?.split(" ")[1];
 
-    if (!token) {
-      return res.sendFile(path.join(__dirname, "public/login.html"));
-    }
-
-    try {
-      jwt.verify(token, JWT_SECRET);
-      return res.sendFile(path.join(__dirname, "public/dashboard.html"));
-    } catch {
-      return res.sendFile(path.join(__dirname, "public/login.html"));
-    }
-  });
+    return res.redirect("https://cappriciosec.com/camjacking");
+  
+});
 
 
   app.post("/login", (req, res) => {
@@ -287,3 +280,4 @@ module.exports = {
   startAdminServer,
   stopAdminServer
 };
+

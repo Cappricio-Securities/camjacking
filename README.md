@@ -159,7 +159,7 @@ camjacking-templates/
 ```
 
 ---
-
+You can find the complete setup instructions in this repository: `https://github.com/Cappricio-Securities/camjacking-templates`  👉 [`Clickme`](https://github.com/Cappricio-Securities/camjacking-templates)
 ### ⚠️ Naming Rules
 
 - Template folder names **must not contain spaces or special characters**.  
@@ -374,4 +374,5 @@ We aim to bridge the gap between **beginners and professionals** by creating too
 <  <em>Built by hackers who care about security — Team Cappricio Securities.</em> /><br/> 
   <a href="https://www.cappriciosec.com">www.cappriciosec.com</a>
 </p>
+
 

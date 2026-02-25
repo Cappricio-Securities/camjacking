@@ -357,7 +357,7 @@ We aim to bridge the gap between **beginners and professionals** by creating too
 
 ## 👨‍💻 Authors
 
-**Karthi The Hacker**  
+**KarthiTheHacker**  
 - 🌐 Website: [karthithehacker.com](https://karthithehacker.com)  
 - 🐙 GitHub: [@karthi-the-hacker](https://github.com/karthi-the-hacker)  
 - 🛠️ Contributions: Core CLI, database layer, APIs, authentication, and core backend logic  
@@ -374,3 +374,4 @@ We aim to bridge the gap between **beginners and professionals** by creating too
 <  <em>Built by hackers who care about security — Team Cappricio Securities.</em> /><br/> 
   <a href="https://www.cappriciosec.com">www.cappriciosec.com</a>
 </p>
+

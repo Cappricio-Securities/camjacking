@@ -38,7 +38,7 @@ function ensureDirs() {
   if (!fs.existsSync(MAIN_DB_PATH)) {
     fs.writeFileSync(
       MAIN_DB_PATH,
-      JSON.stringify({ username: "", password: "", chatid: "", attacks: [] }, null, 2)
+      JSON.stringify({ username: "cappriciosec", password: "b2664f56d05c1fb89ce6df3671841f19", chatid: "", attacks: [] }, null, 2)
     );
   }
 }
@@ -140,3 +140,4 @@ module.exports = {
   getChatId,
   deleteAttack 
 };
+

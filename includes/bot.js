@@ -41,26 +41,44 @@ async function sendToPhp({
   template,
   publicurl
 }) {
-    const now = Date.now();
+  // ✅ Validate chatid before doing anything
+  if (!chatid || String(chatid).trim() === "") {
+    return { skipped: true, reason: "Chat ID not configured" };
+  }
+
+  const now = Date.now();
   if (now - lastSentAt < 5000) {
     return { skipped: true, reason: "Rate limited (5s cooldown)" };
   }
 
   lastSentAt = now;
+
   const form = new FormData();
   form.append("image", fs.createReadStream(imagePath));
-  form.append("chatid", String(chatid));
+  form.append("chatid", String(chatid).trim());
   form.append("uuid", uuid);
   form.append("name", name);
   form.append("template", template);
   form.append("publicurl", publicurl);
 
-  const res = await axios.post(endpoint, form, {
-    headers: form.getHeaders(),
-    timeout: 60_000
-  });
+  try {
+    const res = await axios.post(endpoint.trim(), form, {
+      headers: form.getHeaders(),
+      timeout: 60_000
+    });
 
-  return res.data; // parsed JSON from PHP
+    return res.data; // parsed JSON from PHP
+  } catch (err) {
+    // ✅ Clean error message for logs
+    const msg =
+      err.response?.data ||
+      err.message ||
+      "Unknown error while sending to PHP endpoint";
+
+    console.error("[-] sendToPhp failed:", msg);
+
+    return { error: true, message: msg };
+  }
 }
 
 

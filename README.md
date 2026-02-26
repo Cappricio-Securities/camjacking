@@ -334,7 +334,7 @@ To stop the running server at any time: `x`
 
 > Coming Soon:
 
-* AI integration for webcloing and prmot to template designing
+* AI integration for webcloing and prompt to template designing
 
 ---
 
@@ -374,5 +374,6 @@ We aim to bridge the gap between **beginners and professionals** by creating too
 <  <em>Built by hackers who care about security — Team Cappricio Securities.</em> /><br/> 
   <a href="https://www.cappriciosec.com">www.cappriciosec.com</a>
 </p>
+
 
 

